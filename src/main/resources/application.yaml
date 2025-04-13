@@ -1,3 +1,12 @@
 spring:
   application:
     name: BVT_demo1
+  datasource:
+    url: jdbc:mysql://localhost:3306/djinada
+    username: root
+    password: Djinada2160
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
