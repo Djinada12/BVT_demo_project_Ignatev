@@ -1,17 +1,11 @@
 package ru.mtuci.BVT_demo1;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
 @Entity
 @Table(name = "File_table")
-//@Getter
-//@Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
+@Data
 public class FileEntity
 {
     @Id
@@ -21,23 +15,8 @@ public class FileEntity
     @Column(name = "file_name", nullable = false)
     private  String fileName;
 
-    public Long getId()
-    {
-        return id;
-    }
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
+    private  String contentType;
 
-    public String getFileName()
-    {
-        return fileName;
-    }
-
-    public void setFileName(String fileName)
-    {
-        this.fileName = fileName;
-    }
-
+    @Lob
+    private byte[] data;
 }
