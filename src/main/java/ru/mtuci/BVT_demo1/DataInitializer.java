@@ -19,7 +19,6 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) {
         if (repository.count() == 0) {
             ThreatSignature eicar = new ThreatSignature();
-            eicar.setId(UUID.randomUUID());
             eicar.setName("EICAR-Test");
             eicar.setPattern("X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR");
             repository.save(eicar);
